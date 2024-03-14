@@ -1,6 +1,5 @@
 package recipe.backend.entity;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import lombok.AllArgsConstructor;
@@ -12,10 +11,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class FolderDTO {
+public class FolderUADTO {
     Long id;
-    String name;
-    FolderUADTO userAccount;
-    @Builder.Default
-    List<String> recipeList = new ArrayList<>();
+    String username;
 }
