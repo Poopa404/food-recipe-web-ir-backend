@@ -6,6 +6,8 @@ import recipe.backend.dao.UserAccountDao;
 import recipe.backend.entity.Folder;
 import recipe.backend.entity.UserAccount;
 
+import java.util.Optional;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -48,6 +50,18 @@ public class FolderServiceImpl implements FolderService{
     @Override
     public Page<Folder> getFolder(Long userAccountId, Pageable pageable) {
         return folderDao.getFolder(userAccountId, pageable);
+    }
+
+    @Override
+    public void deleteFolderById(Long id) {
+        if(id != null){
+            Folder toDelete = getFolder(id);
+            if(toDelete != null && toDelete.getUserAccount().getId() != null && toDelete.getUserAccount().getId() != 0){
+                UserAccount user = userAccountDao.findById(toDelete.getUserAccount().getId()).orElse(null);
+                user.getFolder().remove(toDelete);
+                folderDao.deleteFolderById(id);
+            }
+        }
     }
 
 }

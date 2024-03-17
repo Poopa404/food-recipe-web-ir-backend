@@ -29,4 +29,6 @@ public class Folder {
     UserAccount userAccount;
     @Builder.Default
     List<String> recipeList = new ArrayList<>();
+    @Builder.Default
+    boolean baseFolder = false;
 }

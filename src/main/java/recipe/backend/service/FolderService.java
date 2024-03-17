@@ -12,4 +12,5 @@ public interface FolderService {
     Folder getFolder(Long id);
     Folder save(Folder folder);
     Page<Folder> getFolder(Long userAccountId, Pageable pageable);
+    void deleteFolderById(Long id);
 }

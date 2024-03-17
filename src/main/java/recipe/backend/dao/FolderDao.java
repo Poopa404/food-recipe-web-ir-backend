@@ -14,4 +14,5 @@ public interface FolderDao {
     Folder save(Folder Folder);
     Page<Folder> getFolder(Long userAccountId, Pageable page);
     Optional<Folder> findById(Long id);
+    void deleteFolderById(Long id);
 }

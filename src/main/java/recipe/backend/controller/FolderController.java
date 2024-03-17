@@ -62,4 +62,14 @@ public class FolderController {
         return ResponseEntity.ok(LabMapper.INSTANCE.getFolderDTO(output));
     }
 
+    @PostMapping("folder/delete/{id}")
+    public ResponseEntity<?> deleteFolderById(@PathVariable("id") Long id) {
+        Folder output = folderService.getFolder(id);
+        if (output != null && !output.isBaseFolder()){
+            folderService.deleteFolderById(id);
+            return ResponseEntity.ok(id+" is deleted");
+        }else {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND,"The given id is not found");
+        }
+    }
 }

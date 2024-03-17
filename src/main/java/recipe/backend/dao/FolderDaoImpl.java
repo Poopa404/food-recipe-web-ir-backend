@@ -54,4 +54,9 @@ public class FolderDaoImpl implements FolderDao{
         return folderRepository.findById(id);
     }
 
+    @Override
+    public void deleteFolderById(Long id) {
+        folderRepository.deleteById(id);
+    }
+
 }

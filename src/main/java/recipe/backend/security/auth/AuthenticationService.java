@@ -50,6 +50,7 @@ public class AuthenticationService {
         .build());
     Folder allSaved = folderRepository.save(Folder.builder()
         .name("All Saved Recipes")
+        .baseFolder(true)
         .build());
 
     var savedUser = repository.save(user);

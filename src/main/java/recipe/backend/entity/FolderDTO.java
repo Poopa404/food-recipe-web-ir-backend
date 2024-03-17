@@ -18,4 +18,6 @@ public class FolderDTO {
     FolderUADTO userAccount;
     @Builder.Default
     List<String> recipeList = new ArrayList<>();
+    @Builder.Default
+    boolean baseFolder = false;
 }
