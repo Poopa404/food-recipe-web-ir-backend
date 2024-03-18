@@ -1,14 +1,10 @@
 package recipe.backend.entity;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -20,17 +16,13 @@ import lombok.NoArgsConstructor;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-public class Folder {
+public class RatedItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Exclude
     Long id;
-    String name;
+    String recipeId;
+    Long stars;
     @ManyToOne
-    UserAccount userAccount;
-    @OneToMany(mappedBy = "folder")
-    @Builder.Default
-    List<RatedItem> recipeList = new ArrayList<RatedItem>();
-    @Builder.Default
-    boolean baseFolder = false;
+    Folder folder;
 }

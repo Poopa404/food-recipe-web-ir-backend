@@ -8,6 +8,8 @@ import org.mapstruct.factory.Mappers;
 
 import recipe.backend.entity.Folder;
 import recipe.backend.entity.FolderDTO;
+import recipe.backend.entity.RatedItem;
+import recipe.backend.entity.RatedItemDTO;
 import recipe.backend.entity.UserAccount;
 import recipe.backend.entity.UserAccountAuthDTO;
 import recipe.backend.entity.UserAccountDTO;
@@ -23,5 +25,8 @@ public interface LabMapper {
 
     FolderDTO getFolderDTO(Folder folder);
     List<FolderDTO> getFolderDTO(List<Folder> folder);
+
+    RatedItemDTO getRatedItemDTO(RatedItem ratedItem);
+    List<RatedItemDTO> getRatedItemDTO(List<RatedItem> ratedItem);
 
 }

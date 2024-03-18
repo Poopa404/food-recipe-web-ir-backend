@@ -32,8 +32,8 @@ public class UserAccountServiceImpl implements UserAccountService{
 
     @Override
     @Transactional
-    public UserAccount save(UserAccount announcement) {
-        return userAccountDao.save(announcement);
+    public UserAccount save(UserAccount ua) {
+        return userAccountDao.save(ua);
     }
 
 }

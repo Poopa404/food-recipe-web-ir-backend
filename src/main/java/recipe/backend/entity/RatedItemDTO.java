@@ -9,7 +9,8 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class FolderUADTO {
+public class RatedItemDTO {
     Long id;
-    String username;
+    String recipeId;
+    Long stars;
 }

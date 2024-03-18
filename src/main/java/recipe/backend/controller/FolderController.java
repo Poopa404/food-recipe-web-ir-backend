@@ -57,8 +57,8 @@ public class FolderController {
     }
 
     @PostMapping("/folder")
-    public ResponseEntity<?> addFolder(@RequestBody Folder CommentHistory){
-        Folder output = folderService.save(CommentHistory);
+    public ResponseEntity<?> addFolder(@RequestBody Folder folder){
+        Folder output = folderService.save(folder);
         return ResponseEntity.ok(LabMapper.INSTANCE.getFolderDTO(output));
     }
 
